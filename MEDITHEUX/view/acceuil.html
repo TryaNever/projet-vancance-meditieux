@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>méditheu</title>
+    <link rel="icon" href="assets/images/logo.png">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/acceuil.css">
+</head>
+
+<body>
+    <header> 
+        <nav>
+            <ul>
+                <li><a href="../view/acceuil.html">acceuil</a></li>
+                <li><a href="../music.html">programme</a></li>
+                <li><a href="#">abonnement</a></li>
+            </ul>
+        </nav>
+        <img src="/assets/images/logo.png" alt="logo de meditheu" class="logo">
+    </header>
+    <main>
+        <div class="acceuil">
+            <div class="contenaire-rond">
+                <div class="rond">
+                    <div class="wrapper-text">
+                        <p class="relax">Musique relaxante</p>
+                        <p class="description">Découvrez nos 100 musique de relaxation</p>
+                        <button class="tester">Venez tester</button>
+                    </div>
+                    <img src="/assets/images/femme-meditation.png" alt="femme qui medite" class="femme-meditation">
+                </div>
+            </div>
+        </div>
+        <div class="contenaire-music hidden"></div> 
+    </main>
+    <footer> 
+        <div class="wrapper-play hidden">
+            <img src="/assets/images/vinille.png" alt="vinille" class="vinille">
+            <input type="range" class="progressBar" min="0" max="100" value="0">
+            <img src="assets/images/btn-pause.png" alt="bouton pause" class="btn-play-pause">
+        </div>
+    </footer>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

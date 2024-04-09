@@ -6,7 +6,32 @@
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-img {
+header {
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+}
+
+li {
+    margin: 80px 30px;
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+img.logo {
+    width: 200px;
+    height: 200px;
+    margin-right: 450px;
+}
+main div.container img {
     background-color: black;
     width: 150px;
     height: 150px;
@@ -21,8 +46,9 @@ img {
 main {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 75px auto;
 }
 .container {
     width: 250px;
@@ -38,7 +64,8 @@ main {
     margin: 15px 0;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    text-shadow: 0 0 10px #9C9C9C;
+    text-shadow: 0 0 10px #d2cfcf;
+    color: #72FFB6;
 }
 p {
     transition: 0.4s;
@@ -47,20 +74,20 @@ p {
     }
 }
 .wrapper-play {
-    height: 100px;
+    height: 80px;
     width: 100vw;
     position: fixed;
     bottom: 0px;
     left: 0;
-    background-color: red;
+    background-color: #72FFB6;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
 .wrapper-play img {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     background-color: transparent;
     border: none;
 }
@@ -74,4 +101,28 @@ p {
 
 .progressBar[type=range]::-webkit-slider-thumb {
     background-color: black;
+}
+
+.vinille-animation {
+    animation: tour-vinille 5s infinite linear;
+}
+@keyframes tour-vinille {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}
+
+
+
+
+.name-sound-play {
+    width: 110px;
+    text-align: center;
+}
+
+.img-sound-play {
+    border-radius: 10px;
 }

@@ -2,7 +2,12 @@ const main = document.querySelector('main')
 const audio = document.querySelector('.audio')
 const progressBar = document.querySelector('.progressBar')
 const nameSound = document.querySelector('.name-sound-play')
-
+const vinille = document.querySelector('.vinille')
+const nameSoundPlay = document.querySelector('.name-sound-play')
+const buttonPlayPause = document.querySelector('.btn-play-pause')
+const imgSoundPlay = document.querySelector('.img-sound-play')
+let ok = true
+console.log(audio.src == "");
 function convertTime(milliseconds) {
     let totalSeconds = Math.floor(milliseconds / 1000);
     let minutes = Math.floor(totalSeconds / 60);
@@ -14,10 +19,23 @@ function convertTime(milliseconds) {
 }
 
 function updateProgressBar() {
-    const currentTime = audio.currentTime;
-    const duration = audio.duration;
-    progressBar.value = (currentTime / duration) * 100;
+    progressBar.value = (audio.currentTime / audio.duration) * 100;
 
+}
+
+function switchPlayPauseButton() {
+
+    if (ok === true) {
+        buttonPlayPause.src = "assets/images/btn-play.png"
+        audio.pause();
+        vinille.classList.remove("vinille-animation")
+        ok = false
+    } else {
+        buttonPlayPause.src = "assets/images/btn-pause.png"
+        audio.play();
+        vinille.classList.add("vinille-animation")
+        ok = true
+    }
 }
 
 function spawnSound(res) {
@@ -26,7 +44,6 @@ function spawnSound(res) {
         const img = document.createElement('img')
         const nameSound = document.createElement('h3')
         const timeSound = document.createElement('p')
-        const audio = document.createElement('audio')
 
         divContainer.classList.add('container')
         nameSound.classList.add('title-sound')
@@ -49,18 +66,16 @@ function spawnSound(res) {
 function soundGest(res, audioE) {
     for (let i = 0; i < res.tracks.items.length; i++) {
         audioE[i].addEventListener('click', function () {
+            nameSoundPlay.textContent = res.tracks.items[i].track.name;
+            imgSoundPlay.src = res.tracks.items[i].track.album.images[0].url
             if (audio.src == res.tracks.items[i].track.preview_url) {
-                if (audio.paused) {
-                    audio.play();
-                } else {
-                    audio.pause();
-                }
+                switchPlayPauseButton()
             } else {
                 audio.pause();
-                console.log("pause track");
                 audio.src = res.tracks.items[i].track.preview_url;
-                console.log('track play')
+                console.log(audio.src == '');
                 audio.play();
+                vinille.classList.add("vinille-animation")
             }
 
         });
@@ -99,7 +114,7 @@ fetch("https://accounts.spotify.com/api/token", requestOptions)
     })
     .catch((error) => console.error(error));
 
-audio.addEventListener('timeupdate', function() {
+audio.addEventListener('timeupdate', function () {
     updateProgressBar()
 })
 
@@ -108,4 +123,15 @@ progressBar.addEventListener('input', function (event) {
     const duration = audio.duration;
     const newTime = (progress / 100) * duration;
     audio.currentTime = newTime;
+    if (progress) {
+
+    }
 });
+
+buttonPlayPause.addEventListener('click', function () {
+    if (audio.src == "") {
+    } else {
+        switchPlayPauseButton()
+    }
+
+})
