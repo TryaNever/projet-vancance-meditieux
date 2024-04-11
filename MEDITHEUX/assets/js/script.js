@@ -7,7 +7,12 @@ const nameSoundPlay = document.querySelector('.name-sound-play')
 const buttonPlayPause = document.querySelector('.btn-play-pause')
 const imgSoundPlay = document.querySelector('.img-sound-play')
 let ok = true
-console.log(audio.src == "");
+let timeMusic = [30, 120, 300, 600, 1200];
+let numberToSelectTimeMusic = 0
+let timeBarProgressSave = 0
+let imgEster = document.querySelector('.vinille')
+let conteurEster = 0
+
 function convertTime(milliseconds) {
     let totalSeconds = Math.floor(milliseconds / 1000);
     let minutes = Math.floor(totalSeconds / 60);
@@ -19,19 +24,17 @@ function convertTime(milliseconds) {
 }
 
 function updateProgressBar() {
-    progressBar.value = (audio.currentTime / audio.duration) * 100;
-
+    progressBar.value = ((audio.currentTime + timeBarProgressSave) / timeMusic[numberToSelectTimeMusic]) * 100;
 }
 
 function switchPlayPauseButton() {
-
     if (ok === true) {
-        buttonPlayPause.src = "assets/images/btn-play.png"
+        buttonPlayPause.src = " ../assets/images/btn-play.png"
         audio.pause();
         vinille.classList.remove("vinille-animation")
         ok = false
     } else {
-        buttonPlayPause.src = "assets/images/btn-pause.png"
+        buttonPlayPause.src = "../assets/images/btn-pause.png"
         audio.play();
         vinille.classList.add("vinille-animation")
         ok = true
@@ -40,46 +43,118 @@ function switchPlayPauseButton() {
 
 function spawnSound(res) {
     for (let i = 0; i < res.tracks.items.length; i++) {
-        const divContainer = document.createElement('div')
-        const img = document.createElement('img')
-        const nameSound = document.createElement('h3')
-        const timeSound = document.createElement('p')
+        const divContainer = document.createElement('div');
+        const img = document.createElement('img');
+        const nameSound = document.createElement('h3');
+        const timeSound = document.createElement('p');
 
-        divContainer.classList.add('container')
-        nameSound.classList.add('title-sound')
-        timeSound.classList.add('time-length')
+        divContainer.classList.add('container');
+        nameSound.classList.add('title-sound');
+        timeSound.classList.add('time-length');
 
+        img.src = res.tracks.items[i].track.album.images[0].url;
+        nameSound.textContent = res.tracks.items[i].track.name;
+        timeSound.textContent = convertTime(res.tracks.items[i].track.duration_ms) + "   (probleme donc 0:30s)";
 
-        img.src = res.tracks.items[i].track.album.images[0].url
-        nameSound.textContent = res.tracks.items[i].track.name
-        timeSound.textContent = convertTime(res.tracks.items[i].track.duration_ms) + "   (probleme donc 0:30s)"
+        main.appendChild(divContainer);
+        divContainer.appendChild(img);
+        divContainer.appendChild(nameSound);
+        divContainer.appendChild(timeSound);
 
-        main.appendChild(divContainer)
-        divContainer.appendChild(img)
-        divContainer.appendChild(nameSound)
-        divContainer.appendChild(timeSound)
+        divContainer.addEventListener('click', function () {
+            popTimeSelect(res, i);
+        });
     }
-    const audioEvent = document.querySelectorAll('.container')
-    soundGest(res, audioEvent)
 }
+
+
 
 function soundGest(res, audioE) {
     for (let i = 0; i < res.tracks.items.length; i++) {
         audioE[i].addEventListener('click', function () {
-            nameSoundPlay.textContent = res.tracks.items[i].track.name;
-            imgSoundPlay.src = res.tracks.items[i].track.album.images[0].url
-            if (audio.src == res.tracks.items[i].track.preview_url) {
-                switchPlayPauseButton()
-            } else {
-                audio.pause();
-                audio.src = res.tracks.items[i].track.preview_url;
-                console.log(audio.src == '');
-                audio.play();
-                vinille.classList.add("vinille-animation")
-            }
-
+            popTimeSelect(res, i)
         });
     }
+}
+
+function popTimeSelect(res, i) {
+    let divAll = document.createElement('div');
+    let divContain = document.createElement('div');
+    let closePop = document.createElement('i');
+    let containPopMusicInfo = document.createElement('div');
+    let imgMusicInfo = document.createElement('img');
+    let nameMusicInfo = document.createElement('p');
+    let divTimeMusic = document.createElement('div')
+
+    divAll.classList.add('div-pop-all-screen');
+    divContain.classList.add('div-pop-wrapper');
+    closePop.classList.add('fa-solid', 'fa-xmark', 'closePop');
+    containPopMusicInfo.classList.add('contain-pop-info-music');
+    divTimeMusic.classList.add('contain-time-music')
+
+    imgMusicInfo.src = res.tracks.items[i].track.album.images[0].url;
+    nameMusicInfo.textContent = res.tracks.items[i].track.name;
+
+    main.append(divAll);
+    divAll.appendChild(divContain);
+    divContain.appendChild(closePop);
+    divContain.appendChild(containPopMusicInfo);
+    containPopMusicInfo.appendChild(imgMusicInfo);
+    containPopMusicInfo.appendChild(nameMusicInfo);
+    divContain.appendChild(divTimeMusic)
+
+    for (let index = 0; index < timeMusic.length; index++) {
+        let timeMusicP = document.createElement('p')
+        timeMusicP.classList.add('buttonAnimationTime')
+        timeMusicP.textContent = numberToTime(timeMusic[index])
+        divTimeMusic.appendChild(timeMusicP)
+        for (let index = 0; index < 4; index++) {
+            let spanAnimation = document.createElement('span')
+            timeMusicP.appendChild(spanAnimation)
+        }
+    }
+    
+
+    const closePopUp = document.querySelector('.closePop');
+
+    closePopUp.addEventListener('click', function () {
+        divAll.remove()
+    })
+
+    let timeSelectorBtn = document.querySelectorAll('.contain-time-music p')
+    for (let ind = 0; ind < timeSelectorBtn.length; ind++) {
+        timeSelectorBtn[ind].addEventListener('click', function () {
+            numberToSelectTimeMusic = ind
+            timeBarProgressSave = 0
+            imgSoundPlay.src = res.tracks.items[i].track.album.images[0].url
+            nameSoundPlay.textContent = res.tracks.items[i].track.name
+            let timeLoop = 0
+            vinille.classList.add("vinille-animation")
+            audio.src = audio.src = res.tracks.items[i].track.preview_url;
+            audio.play()
+            audio.addEventListener('ended', function () {
+                timeLoop++
+                if (timeMusic[ind] - 30 >= timeLoop * 30) {
+                    timeBarProgressSave += audio.currentTime
+                    console.log(timeBarProgressSave);
+                    audio.currentTime = 0
+                    audio.play()
+                } else {
+                    audio.pause()
+                    vinille.classList.remove("vinille-animation")
+                }
+            })
+        })
+    }
+}
+
+function numberToTime(number) {
+    if (number <= 59) {
+        return number + " secondes"
+    } else {
+        return number / 60 + " minutes"
+    }
+
 }
 
 const myHeaders = new Headers();
@@ -120,18 +195,25 @@ audio.addEventListener('timeupdate', function () {
 
 progressBar.addEventListener('input', function (event) {
     const progress = parseInt(event.target.value);
-    const duration = audio.duration;
-    const newTime = (progress / 100) * duration;
+    const duration = timeMusic[numberToSelectTimeMusic];
+    const progressTime = (progress / 100) * duration;
+    const currentTime = audio.currentTime + timeBarProgressSave;
+    const adjustedTime = progressTime % duration;
+    const newTime = adjustedTime + Math.floor(progressTime / duration) * duration;
     audio.currentTime = newTime;
-    if (progress) {
-
-    }
 });
+
 
 buttonPlayPause.addEventListener('click', function () {
     if (audio.src == "") {
     } else {
         switchPlayPauseButton()
     }
+})
 
+imgEster.addEventListener('click' ,function() {
+    conteurEster += 1
+    if (conteurEster >= 10) {
+        imgEster.src = "../assets/images/vinille-mathieux.png"
+    }
 })
