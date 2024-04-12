@@ -93,7 +93,8 @@ body {
     height: 400px;
 }
 
-.femme-meditation:hover {
+
+.femme-animation {
     animation: tourneMadame 4s linear;
 }
 
@@ -102,14 +103,16 @@ body {
         transform: rotate(0deg)
     }
 
-    20% {transform: rotate(30deg)}
+    20% {
+        transform: rotate(30deg)
+    }
 
-
-
-    60% {transform: rotate(-30deg)}
+    60% {
+        transform: rotate(-30deg)
+    }
 
     100% {
         transform: rotate(0deg)
     }
-    
+
 }

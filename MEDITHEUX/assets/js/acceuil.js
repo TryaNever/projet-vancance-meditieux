@@ -1,6 +1,17 @@
-const acceuil = document.querySelector('.acceuil');
-const btnTester = document.querySelector('.tester');
-btnTester.addEventListener('click', function() {
-    acceuil.classList.add('hidden');
-    contenaireMusic.classList.remove('hidden')
+const imgMadame = document.querySelector('.femme-meditation')
+
+function convertion(timeS) {
+    let newTimeS = ""
+    for (let i = 0; i < timeS.length - 1; i++) {
+        newTimeS += timeS[i];
+    }
+    return newTimeS * 1000
+}
+
+imgMadame.addEventListener('mouseover', function () {
+    imgMadame.classList.add('femme-animation')
+    const timeAnim = getComputedStyle(imgMadame).getPropertyValue('animation-duration')
+    setTimeout(function () {
+        imgMadame.classList.remove('femme-animation')
+    }, convertion(timeAnim))
 })
