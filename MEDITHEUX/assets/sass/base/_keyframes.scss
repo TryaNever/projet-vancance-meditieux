@@ -1,0 +1,28 @@
+@keyframes tour-vinille {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}
+
+@keyframes tourneMadame {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    20% {
+        transform: rotate(30deg)
+    }
+
+    60% {
+        transform: rotate(-30deg)
+    }
+
+    100% {
+        transform: rotate(0deg)
+    }
+
+}

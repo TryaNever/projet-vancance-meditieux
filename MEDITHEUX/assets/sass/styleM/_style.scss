@@ -25,22 +25,21 @@ li {
 
 a {
     text-decoration: none;
-    color: black;
+    color: $noir;
 }
 
 img.logo {
     width: 200px;
     height: 200px;
-    margin-right: 450px;
 }
 
 main div.container img {
-    background-color: black;
+    background-color: $noir;
     width: 150px;
     height: 150px;
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border: 1px solid rgb(167, 167, 167);
+    border: 1px solid $alto;
     transition: 0.3s;
 
     &:hover {
@@ -71,8 +70,8 @@ main {
     margin: 15px 0;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    text-shadow: 0 0 10px #d2cfcf;
-    color: #72FFB6;
+    text-shadow: 0 0 10px $alto;
+    color: $aquamarine;
 }
 
 p {
@@ -89,7 +88,7 @@ p {
     position: fixed;
     bottom: 0px;
     left: 0;
-    background-color: #72FFB6;
+    background-color: $aquamarine;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -105,30 +104,17 @@ p {
 .progressBar {
     width: 300px;
     height: 5px;
-    background-color: white;
+    background-color: $blanc;
     border-radius: 2px;
 }
 
 .progressBar[type=range]::-webkit-slider-thumb {
-    background-color: black;
+    background-color: $noir;
 }
 
 .vinille-animation {
     animation: tour-vinille 5s infinite linear;
 }
-
-@keyframes tour-vinille {
-    0% {
-        rotate: 0deg;
-    }
-
-    100% {
-        rotate: 360deg;
-    }
-}
-
-
-
 
 .name-sound-play {
     width: 110px;
@@ -154,7 +140,7 @@ p {
 .div-pop-wrapper {
     width: 700px;
     height: 350px;
-    background-color: white;
+    background-color: $blanc;
     opacity: 1;
     display: flex;
 
@@ -195,7 +181,7 @@ p {
 }
 
 .contain-time-music p {
-    border: 1px black solid;
+    border: 1px $noir solid;
     padding: 3px;
     border-radius: 5px;
 }
@@ -208,7 +194,7 @@ p {
     position: relative;
     display: inline-block;
     padding: 15px 30px;
-    color: #ffffff;
+    color: $blanc;
     text-transform: uppercase;
     letter-spacing: 4px;
     overflow: hidden;
@@ -220,5 +206,5 @@ p {
     font-weight: bolder;
     text-decoration: none;
     background: linear-gradient(160deg, #5f5f5f, #252525);
-    text-shadow: 0px 0px 2px #72FFB6;
+    text-shadow: 0px 0px 2px $aquamarine;
 }
