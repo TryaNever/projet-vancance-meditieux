@@ -1,123 +1,59 @@
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-/* Document
-   ========================================================================== */
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
 html {
   line-height: 1.15;
-  /* 1 */
   -webkit-text-size-adjust: 100%;
-  /* 2 */
 }
 
-/* Sections
-     ========================================================================== */
-/**
-   * Remove the margin in all browsers.
-   */
 body {
   margin: 0;
 }
 
-/**
-   * Render the `main` element consistently in IE.
-   */
 main {
   display: block;
 }
 
-/**
-   * Correct the font size and margin on `h1` elements within `section` and
-   * `article` contexts in Chrome, Firefox, and Safari.
-   */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
-/* Grouping content
-     ========================================================================== */
-/**
-   * 1. Add the correct box sizing in Firefox.
-   * 2. Show the overflow in Edge and IE.
-   */
 hr {
   box-sizing: content-box;
-  /* 1 */
   height: 0;
-  /* 1 */
   overflow: visible;
-  /* 2 */
 }
 
-/**
-   * 1. Correct the inheritance and scaling of font size in all browsers.
-   * 2. Correct the odd `em` font sizing in all browsers.
-   */
 pre {
   font-family: monospace, monospace;
-  /* 1 */
   font-size: 1em;
-  /* 2 */
 }
 
-/* Text-level semantics
-     ========================================================================== */
-/**
-   * Remove the gray background on active links in IE 10.
-   */
 a {
   background-color: transparent;
 }
 
-/**
-   * 1. Remove the bottom border in Chrome 57-
-   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
-   */
 abbr[title] {
   border-bottom: none;
-  /* 1 */
   text-decoration: underline;
-  /* 2 */
   -webkit-text-decoration: underline dotted;
           text-decoration: underline dotted;
-  /* 2 */
 }
 
-/**
-   * Add the correct font weight in Chrome, Edge, and Safari.
-   */
 b,
 strong {
   font-weight: bolder;
 }
 
-/**
-   * 1. Correct the inheritance and scaling of font size in all browsers.
-   * 2. Correct the odd `em` font sizing in all browsers.
-   */
 code,
 kbd,
 samp {
   font-family: monospace, monospace;
-  /* 1 */
   font-size: 1em;
-  /* 2 */
 }
 
-/**
-   * Add the correct font size in all browsers.
-   */
 small {
   font-size: 80%;
 }
 
-/**
-   * Prevent `sub` and `sup` elements from affecting the line height in
-   * all browsers.
-   */
 sub,
 sup {
   font-size: 75%;
@@ -134,59 +70,31 @@ sup {
   top: -0.5em;
 }
 
-/* Embedded content
-     ========================================================================== */
-/**
-   * Remove the border on images inside links in IE 10.
-   */
 img {
   border-style: none;
 }
 
-/* Forms
-     ========================================================================== */
-/**
-   * 1. Change the font styles in all browsers.
-   * 2. Remove the margin in Firefox and Safari.
-   */
 button,
 input,
 optgroup,
 select,
 textarea {
   font-family: inherit;
-  /* 1 */
   font-size: 100%;
-  /* 1 */
   line-height: 1.15;
-  /* 1 */
   margin: 0;
-  /* 2 */
 }
 
-/**
-   * Show the overflow in IE.
-   * 1. Show the overflow in Edge.
-   */
 button,
 input {
-  /* 1 */
   overflow: visible;
 }
 
-/**
-   * Remove the inheritance of text transform in Edge, Firefox, and IE.
-   * 1. Remove the inheritance of text transform in Firefox.
-   */
 button,
 select {
-  /* 1 */
   text-transform: none;
 }
 
-/**
-   * Correct the inability to style clickable types in iOS and Safari.
-   */
 button::-moz-focus-inner,
 [type=button]::-moz-focus-inner,
 [type=reset]::-moz-focus-inner,
@@ -299,11 +207,6 @@ template {
     width: 900px;
   }
 }
-header {
-  display: flex;
-  justify-content: center;
-}
-
 ul {
   display: flex;
   list-style-type: none;
@@ -418,7 +321,142 @@ body {
 }
 
 body {
+  background-color: #F2F2F2;
   font-family: Georgia, "Times New Roman", Times, serif;
+  padding-bottom: 120px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.wrapper-abonnement {
+  width: 350px;
+  height: 550px;
+  margin: 0 20px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+.wrapper-abonnement:nth-last-child(2) {
+  height: 650px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.wrapper-abonnement:nth-last-child(2) .name-abonnement {
+  margin-bottom: 20px;
+}
+.wrapper-abonnement:nth-last-child(2) ul {
+  height: 420px;
+}
+.wrapper-abonnement:nth-last-child(2) li {
+  font-size: 18px;
+}
+
+.wrapper-abonnement:hover {
+  transform: scale(1.1);
+}
+
+.name-abonnement {
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.prix {
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  width: 80%;
+  border-radius: 40px;
+  z-index: 2;
+}
+
+.prix-ans {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.basic-abonnement {
+  color: #FF9501;
+}
+
+.standard-abonnement {
+  color: #25589A;
+}
+
+.premium-abonnement {
+  color: #4D4D4D;
+}
+
+main ul {
+  width: 80%;
+  margin: -20px auto;
+  padding-top: 30px;
+  height: 400px;
+  border-radius: 0px 0px 40px 40px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.avantage-basic,
+.btn-basic {
+  background-color: #FF9501;
+  color: #fff;
+}
+
+.avantage-standard,
+.btn-standard {
+  background-color: #25589A;
+  color: #fff;
+}
+
+.avantage-premium,
+.btn-premium {
+  background-color: #4D4D4D;
+  color: #fff;
+}
+
+main li {
+  margin: 0 15px 20px 50px;
+  font-weight: 100;
+  font-size: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+li.uncheck::before,
+li.check::before {
+  content: "";
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-image: url(../images/uncheck.png);
+  background-size: cover;
+  position: absolute;
+  left: -35px;
+}
+
+li.check::before {
+  background-image: url(../images/check.png);
+}
+
+.btn-abonner {
+  margin: 40px 0 20px 0;
+  width: 80%;
+  height: 50px;
+  border-radius: 20px;
+  border: none;
 }
 
 header {
@@ -613,149 +651,4 @@ p:hover {
   text-decoration: none;
   background: linear-gradient(160deg, #5f5f5f, #252525);
   text-shadow: 0px 0px 2px #72FFB6;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: #F2F2F2;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  padding-bottom: 120px;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
-
-.wrapper-abonnement {
-  width: 350px;
-  height: 550px;
-  margin: 0 20px;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 20px;
-  transition: 0.5s;
-}
-
-.wrapper-abonnement:nth-last-child(2) {
-  height: 650px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-.wrapper-abonnement:nth-last-child(2) .name-abonnement {
-  margin-bottom: 20px;
-}
-.wrapper-abonnement:nth-last-child(2) ul {
-  height: 420px;
-}
-.wrapper-abonnement:nth-last-child(2) li {
-  font-size: 18px;
-}
-
-.wrapper-abonnement:hover {
-  transform: scale(1.1);
-}
-
-.name-abonnement {
-  font-size: 40px;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.prix {
-  text-align: center;
-  background-color: #000;
-  color: #fff;
-  width: 80%;
-  border-radius: 40px;
-  z-index: 2;
-}
-
-.prix-ans {
-  font-size: 30px;
-  margin-right: 10px;
-}
-
-.basic-abonnement {
-  color: #FF9501;
-}
-
-.standard-abonnement {
-  color: #25589A;
-}
-
-.premium-abonnement {
-  color: #4D4D4D;
-}
-
-main ul {
-  width: 80%;
-  margin: -20px auto;
-  padding-top: 30px;
-  height: 400px;
-  border-radius: 0px 0px 40px 40px;
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-}
-
-.avantage-basic,
-.btn-basic {
-  background-color: #FF9501;
-  color: #fff;
-}
-
-.avantage-standard,
-.btn-standard {
-  background-color: #25589A;
-  color: #fff;
-}
-
-.avantage-premium,
-.btn-premium {
-  background-color: #4D4D4D;
-  color: #fff;
-}
-
-main li {
-  margin: 0 15px 20px 50px;
-  font-weight: 100;
-  font-size: 16px;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-li.uncheck::before,
-li.check::before {
-  content: "";
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  background-image: url(../images/uncheck.png);
-  background-size: cover;
-  position: absolute;
-  left: -35px;
-}
-
-li.check::before {
-  background-image: url(../images/check.png);
-}
-
-.btn-abonner {
-  margin: 40px 0 20px 0;
-  width: 80%;
-  height: 50px;
-  border-radius: 20px;
-  border: none;
-}/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=index.css.map */

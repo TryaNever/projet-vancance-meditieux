@@ -4,7 +4,7 @@
     padding: 0;
 }
 body {
-    background-color: $concrete;
+    background-color: $Concrete;
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding-bottom: 120px;
 }
@@ -18,7 +18,7 @@ main {
     width: 350px;
     height: 550px;
     margin: 0 20px;
-    background-color: $blanc;
+    background-color: $White;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,8 +50,8 @@ main {
 }
 .prix {
     text-align: center;
-    background-color: $noir;
-    color: $blanc;
+    background-color: $Black;
+    color: $White;
     width: 80%;
     border-radius: 40px;
     z-index: 2;
@@ -61,13 +61,13 @@ main {
     margin-right: 10px;
 }
 .basic-abonnement {
-    color: $pizazz;
+    color: $Pizazz;
 }
 .standard-abonnement {
-    color: $tropaz;
+    color: $Tropaz;
 }
 .premium-abonnement {
-    color: $tundora;
+    color: $Tundora;
 }
 main ul {
     width: 80%;
@@ -81,18 +81,18 @@ main ul {
 }
 .avantage-basic,
 .btn-basic {
-    background-color: $pizazz;
-    color: $blanc;
+    background-color: $Pizazz;
+    color: $White;
 }
 .avantage-standard,
 .btn-standard {
-    background-color: $tropaz;
-    color: $blanc;
+    background-color: $Tropaz;
+    color: $White;
 }
 .avantage-premium,
 .btn-premium {
-    background-color: $tundora;
-    color: $blanc;
+    background-color: $Tundora;
+    color: $White;
 }
 main li {
     margin: 0 15px 20px 50px;

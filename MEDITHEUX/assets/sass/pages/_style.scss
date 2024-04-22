@@ -1,13 +1,3 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
 header {
     display: flex;
     justify-content: center;
@@ -25,7 +15,7 @@ li {
 
 a {
     text-decoration: none;
-    color: $noir;
+    color: $Black;
 }
 
 img.logo {
@@ -34,12 +24,12 @@ img.logo {
 }
 
 main div.container img {
-    background-color: $noir;
+    background-color: $Black;
     width: 150px;
     height: 150px;
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border: 1px solid $alto;
+    border: 1px solid $Alto;
     transition: 0.3s;
 
     &:hover {
@@ -70,8 +60,8 @@ main {
     margin: 15px 0;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    text-shadow: 0 0 10px $alto;
-    color: $aquamarine;
+    text-shadow: 0 0 10px $Alto;
+    color: $Aquamarine;
 }
 
 p {
@@ -88,7 +78,7 @@ p {
     position: fixed;
     bottom: 0px;
     left: 0;
-    background-color: $aquamarine;
+    background-color: $Aquamarine;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -104,12 +94,12 @@ p {
 .progressBar {
     width: 300px;
     height: 5px;
-    background-color: $blanc;
+    background-color: $White;
     border-radius: 2px;
 }
 
 .progressBar[type=range]::-webkit-slider-thumb {
-    background-color: $noir;
+    background-color: $Black;
 }
 
 .vinille-animation {
@@ -140,7 +130,7 @@ p {
 .div-pop-wrapper {
     width: 700px;
     height: 350px;
-    background-color: $blanc;
+    background-color: $White;
     opacity: 1;
     display: flex;
 
@@ -181,20 +171,19 @@ p {
 }
 
 .contain-time-music p {
-    border: 1px $noir solid;
+    border: 1px $Black solid;
     padding: 3px;
     border-radius: 5px;
 }
 
 
-
 .buttonAnimationTime {
     border-radius: 12px;
-    border: 3px outset $noir;
+    border: 3px outset $Black;
     position: relative;
     display: inline-block;
     padding: 15px 30px;
-    color: $blanc;
+    color: $White;
     text-transform: uppercase;
     letter-spacing: 4px;
     overflow: hidden;
@@ -205,6 +194,6 @@ p {
     text-align: center;
     font-weight: bolder;
     text-decoration: none;
-    background: linear-gradient(160deg, $scorpion , $mineShaft);
-    text-shadow: 0px 0px 2px $aquamarine;
+    background: linear-gradient(160deg, $Scorpion , $MineShaft);
+    text-shadow: 0px 0px 2px $Aquamarine;
 }
