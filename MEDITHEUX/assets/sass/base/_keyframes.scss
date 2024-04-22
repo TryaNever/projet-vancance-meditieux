@@ -26,3 +26,20 @@
     }
 
 }
+
+@keyframes rond {
+    0% {
+        height: 900px;
+        width: 900px;
+    }
+
+    50% {
+        height: 800px;
+        width: 800px;
+    }
+
+    100% {
+        height: 900px;
+        width: 900px;
+    }
+}

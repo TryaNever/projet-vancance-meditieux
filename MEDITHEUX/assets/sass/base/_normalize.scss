@@ -210,12 +210,6 @@ select {
    * Correct the inability to style clickable types in iOS and Safari.
    */
 
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-    -webkit-appearance: button;
-}
 
 
 button::-moz-focus-inner,
@@ -267,7 +261,6 @@ textarea {
 }
 
 [type="search"] {
-    -webkit-appearance: textfield;
     outline-offset: -2px;
 }
 
