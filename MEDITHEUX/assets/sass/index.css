@@ -326,13 +326,6 @@ body {
   padding-bottom: 120px;
 }
 
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
-
 .wrapper-abonnement {
   width: 350px;
   height: 550px;
