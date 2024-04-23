@@ -1,25 +1,138 @@
 ul {
     display: flex;
     list-style-type: none;
-    width: 500px;
     padding: 0;
 }
-
-li {
-    margin: 80px 30px;
+.navHead ul li {
+    margin: 75px 20px;
     text-transform: uppercase;
 }
-
 a {
     text-decoration: none;
     color: $Black;
 }
-
 img.logo {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
 }
-
 .to-center {
-    width: 500px;
+    width: 471px;
+}
+#menu {
+    z-index: 2;
+}
+#menu-bar {
+    width: 45px;
+    height: 40px;
+    margin: 30px 0 20px 20px;
+    cursor: pointer;
+}
+#menu {
+    display: none;
+}
+.lol {
+    margin: 5px 0;
+}
+.bar {
+    height: 5px;
+    width: 100%;
+    background-color: $Aquamarine;
+    display: block;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+#bar1 {
+    transform: translateY(-4px);
+}
+#bar3 {
+    transform: translateY(4px);
+}
+.nav {
+    transition: 0.3s ease;
+    display: none;
+}
+.nav ul {
+    padding: 0 22px;
+}
+.nav li {
+    list-style: none;
+    padding: 12px 0;
+}
+.nav li a {
+    color: $White;
+    font-size: 20px;
+    text-decoration: none;
+}
+#nav ul {
+    display: flex;
+    flex-direction: column;
+}
+.nav li a:hover {
+    font-weight: bold;
+}
+.menu-bg,
+#menu {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+.menu-bg {
+    z-index: 1;
+    width: 0;
+    height: 0;
+    margin: 30px 0 20px 20px;
+    background: radial-gradient(circle, $Aquamarine, $Aquamarine);
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+.change {
+    display: block;
+}
+.change .bar {
+    background-color: $White;
+}
+.change #bar1 {
+    transform: translateY(4px) rotateZ(-45deg);
+}
+.change #bar2 {
+    opacity: 0;
+}
+.change #bar3 {
+    transform: translateY(-6px) rotateZ(45deg);
+}
+.change-bg {
+    width: 520px;
+    height: 460px;
+    transform: translate(-60%, -30%);
+}
+@media only screen and (max-width: 1060px) {
+    .navHead ul li {
+        margin: 50px 6px;
+        text-transform: uppercase;
+    }
+    .navHead ul li a {
+        font-size: 11px;
+    }
+    .to-center {
+        width: 236px;
+    }
+    img.logo {
+        width: 125px;
+        height: 125px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .to-center {
+        width: 0px;
+    }
+    img.logo {
+        width: 100px;
+        height: 100px;
+    }
+    .navHead {
+        display: none;
+    }
+    #menu {
+        display: block;
+    }
 }

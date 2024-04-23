@@ -1,11 +1,12 @@
 header {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 ul {
     display: flex;
-    list-style-type: none;
+    list-style-type: none;  
 }
 
 li {
@@ -18,11 +19,6 @@ a {
     color: $Black;
 }
 
-img.logo {
-    width: 200px;
-    height: 200px;
-}
-
 main div.container img {
     background-color: $Black;
     width: 150px;
@@ -31,7 +27,7 @@ main div.container img {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border: 1px solid $Alto;
     transition: 0.3s;
-
+    
     &:hover {
         box-shadow: rgba(0, 0, 0, 0.24) 0px 10px 12px;
     }
@@ -42,7 +38,7 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     max-width: 1200px;
-    margin: 0 auto 75px auto;
+    margin: 0 auto;
 }
 
 .container {
@@ -65,7 +61,6 @@ main {
 }
 p {
     transition: 0.4s;
-
     &:hover {
         scale: 1.1;
     }
@@ -115,10 +110,10 @@ p {
 
 
 .div-pop-all-screen {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
     background-color: rgba(77, 77, 77, 0.389);
     display: flex;
     justify-content: center;
@@ -131,7 +126,6 @@ p {
     background-color: $White;
     opacity: 1;
     display: flex;
-
     position: relative;
 }
 
@@ -179,13 +173,12 @@ p {
     border-radius: 12px;
     border: 3px outset $Black;
     position: relative;
-    display: inline-block;
+    display: inline-block;  
     padding: 15px 30px;
     color: $White;
     text-transform: uppercase;
     letter-spacing: 4px;
     overflow: hidden;
-
     box-shadow: 0 0 10px $DoveGray;
     font-size: 18px;
     width: 200px;
@@ -194,4 +187,55 @@ p {
     text-decoration: none;
     background: linear-gradient(160deg, $Scorpion , $MineShaft);
     text-shadow: 0px 0px 2px $Aquamarine;
+}
+
+@media screen and (max-width: 845px) {
+    .container {
+        width: 200px;
+    }
+    main div.container img {
+        background-color: $Black;
+        width: 130px;
+        height: 130px;
+    }
+    .title-sound {
+        font-size: 20px;
+    }
+    p {
+        font-size: 14px;
+    }
+    .div-pop-wrapper {
+        width: 80%;
+    } 
+    .buttonAnimationTime {
+        width: 150px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 645px) {
+    main{
+        width: 100%;
+    }
+    .container {
+        width: 150px;
+    }
+    main div.container img {
+        background-color: $Black;
+        width: 100px;
+        height: 100px;
+    }
+    .div-pop-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+    } 
+    .buttonAnimationTime {
+        margin: 5px 0;
+    }
+    .contain-pop-info-music img{
+        width: 100px;
+    }
 }

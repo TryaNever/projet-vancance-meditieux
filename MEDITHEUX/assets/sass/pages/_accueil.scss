@@ -80,3 +80,67 @@ body {
 .femme-animation {
     animation: tourneMadame 4s linear;
 }
+
+
+
+@media screen and (max-width: 1024px) {
+    .contenaire-rond, 
+    .rond {
+        width: 600px;
+        height: 600px;
+    }
+
+    .wrapper-text {
+        width: 500px;
+        height: 500px;
+    }
+
+    .relax {
+        font-size: 40px;
+        font-weight: 400;
+    }
+    
+    .description {
+        font-size: 15px;
+    }
+    
+    .tester {
+        padding: 5px;
+        font-size: 25px;
+    }
+
+    .femme-meditation {
+        top: 400px;
+        left: 170px;
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .contenaire-rond, 
+    .rond {
+        width: 400px;
+        height: 400px;
+    }
+
+    .wrapper-text {
+        width: 300px;
+        height: 300px;
+    }
+
+    .relax {
+        font-size: 24px;
+    }
+
+    .description {
+        font-size: 12px;
+    }
+
+    .femme-meditation {
+        top: 270px;
+        left: 120px;
+        width: 150px;
+        height: 150px;
+    }
+}

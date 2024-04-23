@@ -118,3 +118,52 @@ li.check::before {
     border: none;
     cursor: pointer;
 }
+
+
+@media screen and (max-width: 1275px) {
+    .wrapper-abonnement {
+        width: 250px;
+        height: 500px;
+        margin: 0 15px;
+    }
+    .wrapper-abonnement:nth-last-child(2) {
+        width: 250px;
+        height: 550px;
+        ul {
+            height: 370px;
+        }
+        li {
+            font-size: 13px;
+        }
+    }
+    .prix {
+        margin-top: 10px;
+    }
+    .name-abonnement {
+        margin: 20px 0 10px;
+        font-weight: 700;
+        font-size: 28px;
+    }
+    main li {
+        margin: 5px 15px 20px 50px;
+        font-size: 11px;
+    }
+    li.uncheck::before,
+    li.check::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width: 845px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .wrapper-abonnement {
+        margin: 20px 0;
+    }
+}
