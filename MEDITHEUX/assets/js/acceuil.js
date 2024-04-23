@@ -1,4 +1,5 @@
 const imgMadame = document.querySelector('.femme-meditation')
+const testerBtn = document.querySelector('.tester')
 
 function convertion(timeS) {
     let newTimeS = ""
@@ -14,4 +15,8 @@ imgMadame.addEventListener('mouseover', function () {
     setTimeout(function () {
         imgMadame.classList.remove('femme-animation')
     }, convertion(timeAnim))
+})
+
+testerBtn.addEventListener('click', function(){
+    window.location.href='./view/abonemment.html';
 })
