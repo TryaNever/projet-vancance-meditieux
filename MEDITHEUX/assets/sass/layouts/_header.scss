@@ -57,6 +57,7 @@ img.logo {
 .nav li {
     list-style: none;
     padding: 12px 0;
+    margin: 0;
 }
 .nav li a {
     color: $White;
@@ -70,11 +71,12 @@ img.logo {
 .nav li a:hover {
     font-weight: bold;
 }
-.menu-bg,
+#menu-bg,
 #menu {
     top: 0;
     left: 0;
     position: absolute;
+    display: none;
 }
 .menu-bg {
     z-index: 1;
@@ -100,6 +102,7 @@ img.logo {
 .change #bar3 {
     transform: translateY(-6px) rotateZ(45deg);
 }
+
 .change-bg {
     width: 520px;
     height: 460px;
@@ -120,6 +123,10 @@ img.logo {
         width: 125px;
         height: 125px;
     }
+    #menu-bg,
+    #menu {
+        display: none;
+    } 
 }
 @media screen and (max-width: 700px) {
     .to-center {
@@ -132,6 +139,7 @@ img.logo {
     .navHead {
         display: none;
     }
+    #menu-bg,
     #menu {
         display: block;
     }

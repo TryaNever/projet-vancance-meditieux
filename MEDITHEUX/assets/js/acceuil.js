@@ -1,5 +1,6 @@
 const imgMadame = document.querySelector('.femme-meditation')
 const testerBtn = document.querySelector('.tester')
+const rondAnim = document.querySelector('.rond')
 
 function convertion(timeS) {
     let newTimeS = ""
@@ -17,6 +18,13 @@ imgMadame.addEventListener('mouseover', function () {
     }, convertion(timeAnim))
 })
 
-testerBtn.addEventListener('click', function(){
-    window.location.href='./view/abonemment.html';
+testerBtn.addEventListener('click', function () {
+    window.location.href = './view/abonemment.html';
 })
+
+window.addEventListener('resize', function () {
+    rondAnim.classList.remove('anim_rond')
+    setTimeout(function () {
+        rondAnim.classList.add('anim_rond')
+    }, 100);
+});

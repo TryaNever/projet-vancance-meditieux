@@ -21,6 +21,9 @@
     width: 900px;
     border-radius: 50%;
     border: 5px $Aquamarine solid;
+}
+
+.anim_rond {
     animation: rond 5s infinite;
 }
 
@@ -59,6 +62,7 @@
     background-color: $Shamrock;
     border: 2px solid $White;
     color: $White;
+    cursor: pointer;
 }
 
 body {
@@ -86,8 +90,8 @@ body {
 @media screen and (max-width: 1024px) {
     .contenaire-rond, 
     .rond {
-        width: 600px;
         height: 600px;
+        width: 600px;
     }
 
     .wrapper-text {
