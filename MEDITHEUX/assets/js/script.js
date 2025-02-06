@@ -197,7 +197,6 @@ progressBar.addEventListener('input', function (event) {
     const progress = parseInt(event.target.value);
     const duration = timeMusic[numberToSelectTimeMusic];
     const progressTime = (progress / 100) * duration;
-    const currentTime = audio.currentTime + timeBarProgressSave;
     const adjustedTime = progressTime % duration;
     const newTime = adjustedTime + Math.floor(progressTime / duration) * duration;
     audio.currentTime = newTime;
@@ -211,9 +210,3 @@ buttonPlayPause.addEventListener('click', function () {
     }
 })
 
-imgEster.addEventListener('click' ,function() {
-    conteurEster += 1
-    if (conteurEster >= 10) {
-        imgEster.src = "../assets/images/vinille-mathieux.png"
-    }
-})
