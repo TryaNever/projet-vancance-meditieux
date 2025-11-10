@@ -1,90 +1,115 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5264D86N");
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>méditheu</title>
-    <link rel="icon" href="../assets/images/logo.png">
-    <link rel="stylesheet" href="../assets/sass/index.css">
-</head>
-<body>
+    <link rel="icon" href="../assets/images/logo.png" />
+    <link rel="stylesheet" href="../assets/sass/index.css" />
+  </head>
+  <body>
     <header>
-        <div id="menu">
-            <div id="menu-bar" onclick="menuOnClick()">
-                <div id="bar1" class="bar lol"></div>
-                <div id="bar2" class="bar lol"></div>
-                <div id="bar3" class="bar lol"></div>
-            </div>
-            <nav class="nav" id="nav">
-                <ul>
-                    <li><a href="../index.html">acceuil</a></li>
-                    <li><a href="../view/music.html">programme</a></li>
-                    <li><a href="./abonemment.html">abonnement</a></li>
-                </ul>
-            </nav>
+      <div id="menu">
+        <div id="menu-bar" onclick="menuOnClick()">
+          <div id="bar1" class="bar lol"></div>
+          <div id="bar2" class="bar lol"></div>
+          <div id="bar3" class="bar lol"></div>
         </div>
-        <nav class="navHead">
-            <ul>
-                <li><a href="../index.html">acceuil</a></li>
-                <li><a href="./music.html">programme</a></li>
-                <li><a href="./abonemment.html">abonnement</a></li>
-            </ul>
+        <nav class="nav" id="nav">
+          <ul>
+            <li><a href="../index.html">acceuil</a></li>
+            <li><a href="../view/music.html">programme</a></li>
+            <li><a href="./abonemment.html">abonnement</a></li>
+          </ul>
         </nav>
-        <div class="menu-bg" id="menu-bg"></div>
-        <img src="../assets/images/logo.png" alt="logo de meditheu" class="logo">
-        <div class="to-center"></div>
+      </div>
+      <nav class="navHead">
+        <ul>
+          <li><a href="../index.html">acceuil</a></li>
+          <li><a href="./music.html">programme</a></li>
+          <li><a href="./abonemment.html">abonnement</a></li>
+        </ul>
+      </nav>
+      <div class="menu-bg" id="menu-bg"></div>
+      <img
+        src="../assets/images/logo.png"
+        alt="logo de meditheu"
+        class="logo"
+      />
+      <div class="to-center"></div>
     </header>
     <main>
-        <div class="wrapper-abonnement wrapper-abonnement-basic">
-            <div class="name-abonnement basic-abonnement">basic</div>
-            <div class="prix">
-                <div class="prix-ans">99,99€/ans</div>
-                <div class="prix-mois">soit 8,33€/mois</div>
-            </div>
-            <ul class="avantage-basic">
-                <li class="avantage uncheck">plus de pub pendant une séance</li>
-                <li class="avantage uncheck">plus de pub entre une séance</li>
-                <li class="avantage check">accées aux séance repos</li>
-                <li class="avantage check">limite de 5 seances par jour</li>
-                <li class="avantage uncheck">cours avec un professionnel</li>
-            </ul>
-            <button class="btn-abonner btn-basic">M'abonner</button>
+      <div class="wrapper-abonnement wrapper-abonnement-basic">
+        <div class="name-abonnement basic-abonnement">basic</div>
+        <div class="prix">
+          <div class="prix-ans">99,99€/ans</div>
+          <div class="prix-mois">soit 8,33€/mois</div>
         </div>
-        <div class="wrapper-abonnement wrapper-abonnement-standard">
-            <div class="name-abonnement standard-abonnement">standard</div>
-            <div class="prix">
-                <div class="prix-ans">150€/ans</div>
-                <div class="prix-mois">soit12,5€/mois</div>
-            </div>
-            <ul class="avantage-standard">
-                <li class="avantage check">plus de pub pendant une séance</li>
-                <li class="avantage uncheck">plus de pub entre une séance</li>
-                <li class="avantage check">accées aux séance destress</li>
-                <li class="avantage check">limite de 10 seances par jour</li>
-                <li class="avantage check">2 cours avec un professionnel par semaine</li>
-            </ul>
-            <button class="btn-abonner btn-standard">M'abonner</button>
+        <ul class="avantage-basic">
+          <li class="avantage uncheck">plus de pub pendant une séance</li>
+          <li class="avantage uncheck">plus de pub entre une séance</li>
+          <li class="avantage check">accées aux séance repos</li>
+          <li class="avantage check">limite de 5 seances par jour</li>
+          <li class="avantage uncheck">cours avec un professionnel</li>
+        </ul>
+        <button class="btn-abonner btn-basic">M'abonner</button>
+      </div>
+      <div class="wrapper-abonnement wrapper-abonnement-standard">
+        <div class="name-abonnement standard-abonnement">standard</div>
+        <div class="prix">
+          <div class="prix-ans">150€/ans</div>
+          <div class="prix-mois">soit12,5€/mois</div>
         </div>
-        <div class="wrapper-abonnement wrapper-abonnement-premium">
-            <div class="name-abonnement premium-abonnement">premium</div>
-            <div class="prix">
-                <div class="prix-ans">249€/ans</div>
-                <div class="prix-mois">soit 20,75€/mois</div>
-            </div>
-            <ul class="avantage-premium">
-                <li class="avantage check">plus de pub pendant une séance</li>
-                <li class="avantage check">plus de pub entre une séance</li>
-                <li class="avantage check">accées aux séance détente</li>
-                <li class="avantage check">aucune limite de seance par jour</li>
-                <li class="avantage check">cours avec un professionnel tout les jours</li>
-            </ul>
-            <button class="btn-abonner btn-premium">M'abonner</button>
+        <ul class="avantage-standard">
+          <li class="avantage check">plus de pub pendant une séance</li>
+          <li class="avantage uncheck">plus de pub entre une séance</li>
+          <li class="avantage check">accées aux séance destress</li>
+          <li class="avantage check">limite de 10 seances par jour</li>
+          <li class="avantage check">
+            2 cours avec un professionnel par semaine
+          </li>
+        </ul>
+        <button class="btn-abonner btn-standard">M'abonner</button>
+      </div>
+      <div class="wrapper-abonnement wrapper-abonnement-premium">
+        <div class="name-abonnement premium-abonnement">premium</div>
+        <div class="prix">
+          <div class="prix-ans">249€/ans</div>
+          <div class="prix-mois">soit 20,75€/mois</div>
         </div>
+        <ul class="avantage-premium">
+          <li class="avantage check">plus de pub pendant une séance</li>
+          <li class="avantage check">plus de pub entre une séance</li>
+          <li class="avantage check">accées aux séance détente</li>
+          <li class="avantage check">aucune limite de seance par jour</li>
+          <li class="avantage check">
+            cours avec un professionnel tout les jours
+          </li>
+        </ul>
+        <button class="btn-abonner btn-premium">M'abonner</button>
+      </div>
     </main>
     <footer></footer>
     <script src="../assets/js/all.js"></script>
-    <script src="https://kit.fontawesome.com/0f0da4cf40.js" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://kit.fontawesome.com/0f0da4cf40.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
